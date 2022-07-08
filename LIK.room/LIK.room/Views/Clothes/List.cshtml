@@ -1,19 +1,23 @@
 ﻿<!DOCTYPE html>
 
 
-        <h1> Католог одягу </h1>
-        <h3>@Model.currCategory</h3>
-        <div class="row mt-5 mb-2">
+<h1> Католог одягу </h1>
+<h3>@Model.currCategory</h3>
+<div class="row mt-5 mb-2">
     @{
-        foreach (var clothing in Model.allClothing)
+        foreach (Clothing clothing in Model.allClothing)
         {
-            <div class="col-lg-6">
-            <img class="img-thumbnail" src= "@clothing.Imagine" alt="@clothing.Model"/>
-            <h3>@clothing.Model </h3>
-            <p>@clothing.Color</p>
-            <p>Ціна: @clothing.Price.ToString(/*"c"*/) грн</p>
-            <p><a class="btn btn-warning" href ="#">Детальніше</a></p>
-            </div>
+            @Html.Partial("AllClothes",clothing)
         }
-    } 
-    </div>
+    }
+</div>
+
+
+
+@*<div class="col-lg-6">
+    <img class="img-thumbnail" src="@clothing.Imagine" alt="@clothing.Model" />
+    <h3>@clothing.Model </h3>
+    <p>@clothing.Color</p>
+    <p>Ціна: @clothing.Price.ToString(/*"c"*/) грн</p>
+    <p><a class="btn btn-warning" href="#">Детальніше</a></p>
+</div>*@
