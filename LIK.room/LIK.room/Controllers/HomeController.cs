@@ -1,5 +1,6 @@
 ﻿using LIK.room.Data.Interfaces;
 using LIK.room.Data.Models;
+using LIK.room.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -19,8 +20,10 @@ namespace LIK.room.Controllers
 
         public ViewResult Index()
         {
-
-            return View();
+            var HomeClothes = new HomeViewModel { 
+            favCloth = _clothRep.getFavCloth
+            };
+            return View(HomeClothes);
         }
 
     }

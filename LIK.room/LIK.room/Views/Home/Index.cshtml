@@ -1,0 +1,16 @@
+﻿@model HomeViewModel
+
+<!DOCTYPE html>
+
+
+<h1> Найпопулярніші моделі </h1>
+
+<div class="row mt-5 mb-2">
+    @{
+        foreach (Clothing clothing in Model.favCloth)
+        {
+            @Html.Partial("AllClothes", clothing)
+        }
+    }
+</div>
+
