@@ -7,9 +7,9 @@
     @{
         foreach (var clothing in Model.allClothing)
         {
-            <div class="col-lg-4">
-            <img class="img-thumbnail" scr="@clothing.Imagine" alt="@clothing.Model"/>
-            <h2>Модель: @clothing.Model </h2>
+            <div class="col-lg-6">
+            <img class="img-thumbnail" src= "@clothing.Imagine" alt="@clothing.Model"/>
+            <h3>@clothing.Model </h3>
             <p>@clothing.Color</p>
             <p>Ціна: @clothing.Price.ToString(/*"c"*/) грн</p>
             <p><a class="btn btn-warning" href ="#">Детальніше</a></p>

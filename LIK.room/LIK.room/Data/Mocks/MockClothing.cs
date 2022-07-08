@@ -21,7 +21,7 @@ namespace LIK.room.Data.Mocks
                 IsFavourite = true,
                 IsAvailable = true,
                 Size = "S" ,
-                Imagine = "~/img/сукня-міді.jpg",
+                Imagine = "/img/сукня-міді.jpg",
                 Category = _clothingCategory.AllCategories.ElementAt(0)
                 },
             new Clothing {
@@ -42,7 +42,7 @@ namespace LIK.room.Data.Mocks
                 IsFavourite = true, 
                 IsAvailable = true, 
                 Size = "M" , 
-                Imagine = @"img/сорочка з вирізом.jpg",
+                Imagine = "/img/сорочка.jpg",
                 Category = _clothingCategory.AllCategories.ElementAt(2)
             },
 

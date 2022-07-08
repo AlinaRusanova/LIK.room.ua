@@ -6,7 +6,7 @@ namespace LIK.room.Data.Interfaces
     public interface IClothing
     {
         IEnumerable<Clothing> AllClothing { get; }
-        IEnumerable<Clothing> getFavCloth { get; set; }
+        IEnumerable<Clothing> getFavCloth { get; }
         Clothing getObjectCloth (int IdCloth);
 
     }
