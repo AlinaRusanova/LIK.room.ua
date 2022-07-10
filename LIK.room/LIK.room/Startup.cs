@@ -1,3 +1,5 @@
+using LIK.room.Data.Interfaces;
+using LIK.room.Data.Mocks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -16,7 +18,11 @@ namespace LIK.room
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
+            services.AddMvc(options => options.EnableEndpointRouting = false);
+            services.AddTransient<IClothing,MockClothing>(); // объединяет класс и интерфейс
+            services.AddTransient<IClothingCategory, MockCategory>();
+            //services.AddRazorPages();
+           
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,0 +1,14 @@
+﻿<!DOCTYPE html>
+
+
+        <h1> Католог одягу </h1>
+        <h3>@Model.currCategory</h3>
+    @{
+        foreach (var clothing in Model.allClothing)
+        {
+            <div>
+            <h2>Модель: @clothing.Model </h2>
+            <p>Ціна: @clothing.Price.ToString(/*"c"*/) грн</p>
+            </div>
+        }
+    } 
