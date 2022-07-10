@@ -21,15 +21,16 @@ namespace LIK.room.Data.Mocks
                 IsFavourite = true,
                 IsAvailable = true,
                 Size = "S" ,
-                Imagine = "https://img.gepur.com/products/40000/36080/webp/origins/36080_1.webp?1616685320",
+                Imagine = "~/img/сукня-міді.jpg",
                 Category = _clothingCategory.AllCategories.ElementAt(0)
                 },
             new Clothing {
                 Model = "Шкіряна спідниця на запАх", 
                 Articul = 10743, Color = "Колір: коричневий,чорний", 
-                Description = "", Price = 750, IsFavourite = true, 
+                Description = "", Price = 750, 
+                IsFavourite = true, 
                 IsAvailable = true, Size = "M, L" , 
-                Imagine = "https://www.odin-originals.com.ua/wp-content/uploads/2022/01/photo_2022-01-13_20-05-20.jpg",
+                Imagine = "/img/шкіряна спідниця.jpg",
                 Category = _clothingCategory.AllCategories.ElementAt(1)
             },
             new Clothing {
@@ -41,7 +42,7 @@ namespace LIK.room.Data.Mocks
                 IsFavourite = true, 
                 IsAvailable = true, 
                 Size = "M" , 
-                Imagine = "https://images.ua.prom.st/3228371685_w500_h500_bila-sorochka-zhinocha.jpg",
+                Imagine = @"img/сорочка з вирізом.jpg",
                 Category = _clothingCategory.AllCategories.ElementAt(2)
             },
 
