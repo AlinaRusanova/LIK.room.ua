@@ -5,5 +5,5 @@
     <h3>@Model.Model </h3>
     <p>@Model.Color</p>
     <p>Ціна: @Model.Price.ToString(/*"c"*/) грн</p>
-    <p><a class="btn btn-warning" href="#">Детальніше</a></p>
+    <p><a class="btn btn-warning" asp-controller="ShopCart" asp-action="addToCart" asp-route-id="@Model.Id">Додати до корзини</a></p>
 </div>

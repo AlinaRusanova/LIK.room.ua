@@ -17,17 +17,23 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav me-auto mb-2 mb-md-0">
-          <li class="nav-item">
-            <a class="nav-link" href="/">Головна</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Про нас</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/ShopCart/">Корзина</a>
-          </li>
-        </ul>
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+              <li class="nav-item">
+                  <a class="nav-link" asp-controller="Home" asp-action="Index">Головна</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="/Clothes/List/Спідниці">Спідниці</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="/Clothes/List/Сорочки">Сорочки</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="/Clothes/List/Сукні">Сукні</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="/ShopCart/">Корзина</a>
+              </li>
+          </ul>
         <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Search</button>
