@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>cef6d0d5-fa28-40a2-a8ba-9b73ba975bf0</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -76,6 +77,8 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="3.1.27" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="3.1.27" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 

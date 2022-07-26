@@ -23,7 +23,10 @@ namespace LIK.room
 [Obsolete]
         public Startup(IHostingEnvironment hostEnv)
         {
-            _confString = new ConfigurationBuilder().SetBasePath(hostEnv.ContentRootPath).AddJsonFile("dbSettings.json").Build();
+            _confString = new ConfigurationBuilder()
+                .AddUserSecrets<AppDBContent>()
+              //  .SetBasePath(hostEnv.ContentRootPath).AddJsonFile("appsettings.json")
+                .Build();
         }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -34,8 +37,17 @@ namespace LIK.room
             services.AddTransient<IClothing,ClothingRepository>(); // объединяет класс и интерфейс
             services.AddTransient<IClothingCategory, CategoryRepository>();
             services.AddTransient<IAllOrders, OrdersRepository>();
-            services.AddDbContext<AppDBContent>(options => options.UseSqlServer(_confString.GetConnectionString("DefaultConnection")));
-            //services.AddRazorPages();
+            services.AddDbContext<AppDBContent>(options => options
+                                    .UseSqlServer(_confString.GetConnectionString("LIK.roomDB"))
+                                   // .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking)
+                                    //детальный вывод ошибок EF Core
+                                    .EnableDetailedErrors()
+                                    // вывод приватных данных приложения (таких как сгенерированные строки запроса, параметры этих строк запроса)
+                                    .EnableSensitiveDataLogging()) ;
+            //тут необходимо добавить Logger
+            //                .UseLoggerFactory(Console.WriteLine,
+            //                new[] { DbLoggerCategory.Database.Command.Name },  )) ;
+            
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped(sp => ShopCart.GetCart(sp));
@@ -58,7 +70,7 @@ namespace LIK.room
             app.UseMvc(routes =>
             {
                 routes.MapRoute(name: "default", template: "{controller=Home}/{action=Index}/{id?}");
-                routes.MapRoute(name: "categoryFilter", template: "Clothes/{action}/{category?}", defaults: new { Controller = "Clothes", action = "List" });
+             //  routes.MapRoute(name: "categoryFilter", template: "Clothes/{action}/{category?}", defaults: new { Controller = "Clothes", action = "List" });
             });
 
 

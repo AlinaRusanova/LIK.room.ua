@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LIK.Domain\LIK.Domain.csproj" />
+    <ProjectReference Include="..\LIK.room\LIK.room.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,4 +1,8 @@
 ﻿body 
 {
     background: #fcfcfc;
+    
+}
+.img-thumbnail {
+    height: 400px;
 }

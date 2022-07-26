@@ -11,6 +11,6 @@ namespace LIK.room.Data.Models
         public Clothing Clothing { get; set; }
         public int Price { get; set; }
         public string ShopCartId { get; set; }
-
+        // add amount
     }
 }
