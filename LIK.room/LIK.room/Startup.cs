@@ -1,6 +1,3 @@
-using LIK.room.Data;
-using LIK.room.Data.Interfaces;
-using LIK.room.Data.Mocks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -11,8 +8,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using LIK.room.Data.Repository;
-using LIK.room.Data.Models;
+using LIK.Application.Interfaces;
+using LIK.Persistence.Repository;
+using LIK.Persistence;
+
 
 namespace LIK.room
 {
@@ -37,20 +36,17 @@ namespace LIK.room
             services.AddTransient<IClothing,ClothingRepository>(); // объединяет класс и интерфейс
             services.AddTransient<IClothingCategory, CategoryRepository>();
             services.AddTransient<IAllOrders, OrdersRepository>();
+            //    services.AddScoped<IShopCartItem, ShopCartRepository>();
             services.AddDbContext<AppDBContent>(options => options
-                                    .UseSqlServer(_confString.GetConnectionString("LIK.roomDB"))
-                                   // .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking)
-                                    //детальный вывод ошибок EF Core
-                                    .EnableDetailedErrors()
-                                    // вывод приватных данных приложения (таких как сгенерированные строки запроса, параметры этих строк запроса)
-                                    .EnableSensitiveDataLogging()) ;
-            //тут необходимо добавить Logger
-            //                .UseLoggerFactory(Console.WriteLine,
-            //                new[] { DbLoggerCategory.Database.Command.Name },  )) ;
-            
+                                        .UseSqlServer(_confString.GetConnectionString("LIK.roomDB"))
+                                        // .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking)
+                                        //детальный вывод ошибок EF Core
+                                        .EnableDetailedErrors()
+                                        // вывод приватных данных приложения (таких как сгенерированные строки запроса, параметры этих строк запроса)
+                                        .EnableSensitiveDataLogging());
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-            services.AddScoped(sp => ShopCart.GetCart(sp));
+            services.AddScoped(sp => ShopCartRepository.GetCart(sp));
             
             services.AddMvc(options => options.EnableEndpointRouting = false);
 
@@ -66,6 +62,7 @@ namespace LIK.room
             app.UseStatusCodePages();
             app.UseStaticFiles();
             app.UseSession();
+
             //app.UseMvcWithDefaultRoute();
             app.UseMvc(routes =>
             {

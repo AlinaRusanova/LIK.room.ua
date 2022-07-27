@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace LIK.room.Data.Models
+namespace LIK.Domain.Models
 {
     public class Order
     {

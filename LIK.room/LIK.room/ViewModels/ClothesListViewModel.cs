@@ -1,4 +1,4 @@
-﻿using LIK.room.Data.Models;
+﻿using LIK.Domain.Models;
 using System.Collections.Generic;
 
 namespace LIK.room.ViewModels

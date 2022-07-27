@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace LIK.room.ViewModels
+namespace LIK.Application.Interfaces
 {
-    public class HomeViewModel
+   public interface IAllOrders
     {
-        public IEnumerable<Clothing> favCloth { get; set; }
-
+        Task CreateOrder(Order order);
+        
     }
 }

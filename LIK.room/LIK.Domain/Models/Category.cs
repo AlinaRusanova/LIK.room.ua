@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace LIK.room.Data.Models
+namespace LIK.Domain.Models
 {
     public class Category
     {

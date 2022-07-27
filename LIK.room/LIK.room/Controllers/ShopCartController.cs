@@ -1,5 +1,6 @@
-﻿using LIK.room.Data.Interfaces;
-using LIK.room.Data.Models;
+﻿using LIK.Application.Interfaces;
+using LIK.Domain.Models;
+using LIK.Persistence.Repository;
 using LIK.room.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -12,8 +13,8 @@ namespace LIK.room.Controllers
     public class ShopCartController: Controller
     {
         private IClothing _clothRep;
-        private readonly ShopCart _shopCart;
-        public ShopCartController(IClothing clothRep, ShopCart shopCart)
+        private readonly ShopCartRepository _shopCart;
+        public ShopCartController(IClothing clothRep, ShopCartRepository shopCart)
         {
             _clothRep = clothRep;
             _shopCart = shopCart;

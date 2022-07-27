@@ -1,5 +1,4 @@
-﻿using LIK.room.Data.Interfaces;
-using LIK.room.Data.Models;
+﻿using LIK.Application.Interfaces;
 using LIK.room.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System;

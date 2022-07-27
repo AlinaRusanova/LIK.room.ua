@@ -1,9 +1,9 @@
 ﻿@model Clothing
 
 <div class="col-lg-6">
-    <img class="img-thumbnail" src="@Model.Imagine" alt="@Model.Model" height=400 />
+    <img class="img-thumbnail" src="@Model.Imagine" alt="@Model.Model" height=500 />
     <h3>@Model.Model </h3>
     <p>@Model.Color</p>
     <p>Ціна: @Model.Price.ToString(/*"c"*/) грн</p>
-    <p><a class="btn btn-warning" asp-controller="ShopCart" asp-action="addToCart" asp-route-id="@Model.Id">Додати до корзини</a></p>
+    <p><a class="btn btn-warning" asp-controller="ShopCart" asp-action="addToCart" asp-route-id="@Model.Id">Додати до кошика</a></p>
 </div>

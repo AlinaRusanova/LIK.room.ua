@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using LIK.room.Data.Interfaces;
-using LIK.room.ViewModels;
 using System.Collections.Generic;
-using LIK.room.Data.Models;
 using System.Linq;
 using System;
+using LIK.Domain.Models;
+using LIK.Application.Interfaces;
+using LIK.room.ViewModels;
 
 namespace LIK.room.Controllers
 {
